@@ -1,6 +1,12 @@
 import React, { useCallback } from "react";
 
-export const TabTitle = ({ title, titleIcon, setSelectedTab, index, selectedTab }) => {
+export const TabTitle = ({
+  title,
+  titleIcon,
+  setSelectedTab,
+  index,
+  selectedTab,
+}) => {
   const onClick = useCallback(() => {
     setSelectedTab(index);
   }, [setSelectedTab, index]);
@@ -15,6 +21,7 @@ export const TabTitle = ({ title, titleIcon, setSelectedTab, index, selectedTab 
         }
         `}
         onClick={onClick}
+        onMouseEnter={onClick}
       >
         <img
           src={titleIcon}
@@ -26,7 +33,11 @@ export const TabTitle = ({ title, titleIcon, setSelectedTab, index, selectedTab 
           <button
             className={`md:hidden w-9 h-9 border-2 rounded-full relative shrink-0
         after:content-[' '] after:absolute after:bg-white after:h-[2px] after:-mt-[1px] after:top-1/2 after:left-2 after:right-2 after:z-10 
-        ${selectedTab === index ? "bg-white/20" : "before:content-[' '] before:absolute before:bg-white before:w-[2px] before:-ml-[1px] before:left-1/2 before:top-2 before:bottom-2 before:z-10"}
+        ${
+          selectedTab === index
+            ? "bg-white/20"
+            : "before:content-[' '] before:absolute before:bg-white before:w-[2px] before:-ml-[1px] before:left-1/2 before:top-2 before:bottom-2 before:z-10"
+        }
         `}
           ></button>
         </div>
@@ -35,4 +46,3 @@ export const TabTitle = ({ title, titleIcon, setSelectedTab, index, selectedTab 
     </li>
   );
 };
-

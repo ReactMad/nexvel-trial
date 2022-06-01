@@ -1,10 +1,11 @@
-import './App.css';
-import { AccidentCases } from './components/AccidentCases';
+import "./App.css";
+import { AccidentCases } from "./components/AccidentCases";
+import { fakeList } from "./components/accidentCasesData";
 
 function App() {
   return (
     <div className="App font-montserrat">
-      <AccidentCases />
+      <AccidentCases tabList={fakeList} />
     </div>
   );
 }

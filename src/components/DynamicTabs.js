@@ -8,7 +8,7 @@ export const DynamicTabs = ({ children }) => {
 
   return (
     <>
-      <ul className="flex flex-col justify-left md:flex-wrap md:w-[30%] bg-[#5497b0] md:p-2 md:pb-24">
+      <ul className="flex flex-col justify-left md:flex-wrap md:w-[30%] bg-[#5497b0] md:p-2 md:pb-40 overflow-hidden">
         {children &&
           children.map((item, index) => (
             <>
