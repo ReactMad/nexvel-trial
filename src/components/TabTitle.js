@@ -30,7 +30,7 @@ export const TabTitle = ({
         />
         <div className="flex justify-between gap-10">
           {title}
-          <button
+          <div
             className={`md:hidden w-9 h-9 border-2 rounded-full relative shrink-0
         after:content-[' '] after:absolute after:bg-white after:h-[2px] after:-mt-[1px] after:top-1/2 after:left-2 after:right-2 after:z-10 
         ${
@@ -39,7 +39,7 @@ export const TabTitle = ({
             : "before:content-[' '] before:absolute before:bg-white before:w-[2px] before:-ml-[1px] before:left-1/2 before:top-2 before:bottom-2 before:z-10"
         }
         `}
-          ></button>
+          ></div>
         </div>
       </button>
       <div className="md:mx-10 border-b border border-white" />
