@@ -1,32 +1,30 @@
 import React, { useState } from "react";
 import { TabTitle } from "./TabTitle";
-import { useBreakpoint } from "../hooks";
 
 export const DynamicTabs = ({ children }) => {
   const [selectedTab, setSelectedTab] = useState(0);
-  const breakpoint = useBreakpoint();
 
   return (
     <>
-      <ul className="flex flex-col justify-left md:flex-wrap md:w-[30%] bg-[#5497b0] md:p-2 md:pb-40 overflow-hidden">
+      <ul className="flex flex-col shrink-0 justify-left md:flex-wrap md:w-[30%] bg-[#5497b0] md:p-2 md:pb-40 overflow-hidden">
         {children &&
           children.map((item, index) => (
             <>
               <TabTitle
                 key={index}
-                title={item.props.data.tabTitle}
-                titleIcon={item.props.data.titleIcon}
+                title={item.props.data.tabtitle}
+                titleicon={item.props.data.titleicon}
                 index={index}
                 setSelectedTab={setSelectedTab}
                 selectedTab={selectedTab}
               />
-              {["xs", "sm"].includes(breakpoint) &&
-                index === selectedTab &&
-                children[selectedTab]}
+              <div className="block md:hidden">
+                {index === selectedTab && children[selectedTab]}
+              </div>
             </>
           ))}
       </ul>
-      {!["xs", "sm"].includes(breakpoint) && children[selectedTab]}
+      <div className="hidden md:block">{children[selectedTab]}</div>
     </>
   );
 };

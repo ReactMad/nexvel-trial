@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 
 export const TabTitle = ({
   title,
-  titleIcon,
+  titleicon,
   setSelectedTab,
   index,
   selectedTab,
@@ -24,7 +24,7 @@ export const TabTitle = ({
         onMouseEnter={onClick}
       >
         <img
-          src={titleIcon}
+          src={titleicon.sourceUrl ?? titleicon}
           alt={title}
           className="absolute left-16 top-1/2 -translate-x-1/2 -translate-y-1/2"
         />
